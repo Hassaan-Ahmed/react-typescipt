@@ -38,7 +38,7 @@
     "*.+(ts|tsx)": [
       "eslint"
     ],
-    "**/*.+(js|json|jsx|ts|tsx|html|css)": [
+    "**/*.+(ts|tsx|html|css)": [
       "npm run format"
     ]
   },
@@ -53,5 +53,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0"
   }
 }
