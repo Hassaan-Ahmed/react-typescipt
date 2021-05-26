@@ -20,12 +20,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "prepare": "husky install",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "eslint"
+    ],
+    "**/*.+(js|json|jsx|ts|tsx|html|css)": [
+      "npm run format"
     ]
   },
   "browserslist": {

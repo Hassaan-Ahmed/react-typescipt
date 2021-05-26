@@ -1,0 +1,16 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run check-type
+npx lint-staged
+
+FILE=".env"
+
+if [ -s $FILE ]; then
+# bash "$(dirname "$0")/build.sh"
+export $(grep -v '^#' $FILE | tr -d ' ' | xargs)
+
+case $(echo $NODE_ENV | awk '{ print tolower($0) }') in prod*) npm run build;; esac
+
+fi
+
