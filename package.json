@@ -20,6 +20,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "npm run check-format && npm run lint && npm run build",
+    "check-type": "tsc",
     "prepare": "husky install",
     "eject": "react-scripts eject"
   },
